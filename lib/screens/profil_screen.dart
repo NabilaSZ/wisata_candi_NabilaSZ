@@ -51,8 +51,27 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ],
                     ),
                   ),
-                )
+                ),
                 // TODO: 3. Buat bagian profilnya yang berisi info profil
+                SizedBox(height: 28),
+                Divider(color: Colors.deepPurple[100]),
+                SizedBox(height: 4),
+                Row(
+                  children: [
+                    SizedBox(width: MediaQuery.of(context).size.width/3,
+                    child: Row(
+                      children: [
+                        Icon(Icons.lock, color: Colors.amber),
+                        SizedBox(width: 8),
+                        Text("Pengguna", style: TextStyle(
+                          fontSize: 18, fontWeight: FontWeight.bold,
+                        ),),
+                      ],
+                    ),),
+
+                  ],
+                  
+                )
                 // TODO : 4. Buat bagian ProfileAction yang berisi TextButton sign in/out
               ],
             ),
