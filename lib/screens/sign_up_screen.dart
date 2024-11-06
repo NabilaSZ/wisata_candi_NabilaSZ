@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 
-class SignInScreen extends StatefulWidget {
-  SignInScreen({super.key});
+class SignUpScreen extends StatefulWidget {
+  const SignUpScreen({super.key});
 
   @override
-  State<SignInScreen> createState() => _SignInScreenState();
+  State<SignUpScreen> createState() => _SignUpScreenState();
 }
-
-class _SignInScreenState extends State<SignInScreen> {
+class _SignUpScreenState extends State<SignUpScreen> {
   // TODO: 1. PDeklarasikan variabel
   final TextEditingController _usernameController = TextEditingController();
 
@@ -70,7 +69,8 @@ class _SignInScreenState extends State<SignInScreen> {
                       onPressed: (){},
                       child: Text('Sign In')),
                   // TODO: 8. Pasang TextButton Sign In
-                  // SizedBox(height: 10),
+                  SizedBox(height: 10),
+                  // Alternatif
                   // TextButton(
                   //     onPressed: (){},
                   //     child: Text('Belum punya akun? Daftar disini.')),

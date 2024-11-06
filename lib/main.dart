@@ -3,6 +3,7 @@ import 'package:wisata_candi/screens/detail_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:wisata_candi/screens/profil_screen.dart';
 import 'package:wisata_candi/screens/sign_in_screen.dart';
+import 'package:wisata_candi/screens/sign_up_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -32,8 +33,9 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       //home: ProfileScreen(),
-      // home: DetailScreen(candi: candiList[0]),
-      home: SignInScreen(),
+      home: DetailScreen(candi: candiList[0]),
+       //home: SignInScreen(),
+      // home: SignUpScreen(),
     );
   }
 }
