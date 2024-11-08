@@ -32,7 +32,17 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  // TODO: 5. Pasang TextFormField Nama Pengguna
+                  
+                  // TODO: 5. Pasang TextFormField Nama Lengkap
+                  TextFormField(
+                    controller: _usernameController,
+                    decoration: InputDecoration(
+                      labelText: "Nama Lengkap",
+                      border: OutlineInputBorder(),
+                    ),
+                  ),
+                  // TODO: 6. Pasang TextFormField Nama Pengguna
+                  SizedBox(height: 20),
                   TextFormField(
                     controller: _usernameController,
                     decoration: InputDecoration(
@@ -40,7 +50,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       border: OutlineInputBorder(),
                     ),
                   ),
-                  // TODO: 6. Pasang TextFormField Kata Sandi
+
+                  // TODO: 7. Pasang TextFormField Kata Sandi
                   SizedBox(height: 20),
                   TextFormField(
                     controller: _passswordController,
@@ -61,12 +72,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     ),
                     obscureText: _obscurePassword,
                   ),
-                  // TODO: 7. Pasang TextFormButton Sign In
+                  // TODO: 8. Pasang TextFormButton Sign In
                   SizedBox(height: 20),
                   ElevatedButton(
                       onPressed: (){},
                       child: Text('Sign Up')),
-                  // TODO: 8. Pasang TextButton Sign Up
+                  // TODO: 9. Pasang TextButton Sign Up
                   SizedBox(height: 10),
                   // Alternatif
                   // TextButton(
