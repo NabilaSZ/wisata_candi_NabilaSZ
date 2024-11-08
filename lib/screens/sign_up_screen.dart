@@ -13,16 +13,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
   final TextEditingController _passswordController = TextEditingController();
 
   String _errorText = '';
-
   bool _isSignedIn = false;
-
   bool _obscurePassword = true;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       // TODO: 2. Pasang AppBar
-      appBar: AppBar(title: Text('Sign In'),),
+      appBar: AppBar(title: Text('Sign Up'),),
       // TODO: 3. Pasang Body
       body: Center(
         child: SingleChildScrollView(
@@ -67,8 +65,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   SizedBox(height: 20),
                   ElevatedButton(
                       onPressed: (){},
-                      child: Text('Sign In')),
-                  // TODO: 8. Pasang TextButton Sign In
+                      child: Text('Sign Up')),
+                  // TODO: 8. Pasang TextButton Sign Up
                   SizedBox(height: 10),
                   // Alternatif
                   // TextButton(
