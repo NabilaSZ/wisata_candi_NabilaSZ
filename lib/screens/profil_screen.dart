@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wisata_candi/widgets/profileInfoItem.dart';
+
 
 
 class ProfileScreen extends StatefulWidget {
@@ -81,52 +81,25 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 Divider(color: Colors.deepPurple[100]),
                 SizedBox(height: 4),
 
-                // Row(
-                //   children: [
-                //     SizedBox(width: MediaQuery.of(context).size.width / 3,
-                //       child: Row(
-                //         children: [
-                //           Icon(Icons.lock, color: Colors.amber),
-                //           SizedBox(width: 8),
-                //           Text('Nama', style: TextStyle(
-                //             fontSize: 18, fontWeight: FontWeight.bold,
-                //           ),),
-                //         ],
-                //       ),),
-                //     Expanded(
-                //         child: Text(' $fullName', style: TextStyle(
-                //           fontSize: 18),),),
-                //     if(isSignedIn) Icon(Icons.edit),
-                //   ],
-                // ),
+                 Row(
+                  children: [
+                     SizedBox(width: MediaQuery.of(context).size.width / 3,
+                       child: Row(
+                         children: [
+                           Icon(Icons.lock, color: Colors.amber),
+                           SizedBox(width: 8),
+                           Text('Nama', style: TextStyle(
+                             fontSize: 18, fontWeight: FontWeight.bold,
+                           ),),
+                         ],
+                       ),),
+                     Expanded(
+                         child: Text(' $fullName', style: TextStyle(
+                           fontSize: 18),),),
+                     if(isSignedIn) Icon(Icons.edit),
+                   ],
+                 ),
 
-                ProfileInfoItem(
-                    icon: Icons.lock,
-                    label: 'Pengguna',
-                    value: username,
-                    iconColor: Colors.amber),
-                SizedBox(height: 4),
-                Divider(color: Colors.deepPurple[100]),
-                SizedBox(height: 4),
-                ProfileInfoItem(
-                  icon: Icons.person,
-                  label: 'Nama',
-                  value: fullName,
-                  showEditIcon: isSignedIn,
-                  onEditPressed: () {
-                    debugPrint('Icon edit ditekan');
-                  },
-                  iconColor: Colors.blue,
-                ),
-                SizedBox(height: 4),
-                Divider(color: Colors.deepPurple[100]),
-                SizedBox(height: 4),
-                ProfileInfoItem(
-                  icon: Icons.favorite,
-                  label: 'Favorit',
-                  value: favoriteCandiCount > 0 ? '$favoriteCandiCount' : '',
-                  iconColor: Colors.red,
-                ),
 
                 // TODO: 4. Buat ProfileActions yang berisi TextButton Sign In / Out
                 SizedBox(height: 4),
