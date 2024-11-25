@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SignInScreen extends StatefulWidget {
   SignInScreen({super.key});
@@ -13,13 +14,24 @@ class _SignInScreenState extends State<SignInScreen> {
   final TextEditingController _usernameController = TextEditingController();
 
   final TextEditingController _passwordCintroller = TextEditingController();
-
-  String _errorText ='';
-
-  bool _isSignnedIn = false;
-
+  late String _errorText ='';
+  final bool _isSignnedIn = false;
   bool _obscurePassword = true;
 
+  void _signIn()async{
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    final String savedUsername = prefs.getString('username')?? '';
+    final String savedPassword = prefs.getString('password')?? '';
+    final String enteredUsername = _usernameController.text.trim();
+    final String enteredPassword = _passwordCintroller.text.trim();
+
+    if (enteredUsername.isEmpty || enteredPassword.isEmpty) {
+      setState(() {
+        _errorText = 'Nama pengguna dan kata sandi harus diisi.';
+      });
+      return;
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -84,7 +96,9 @@ class _SignInScreenState extends State<SignInScreen> {
                                     fontSize: 16
                                 ),
                                 recognizer: TapGestureRecognizer()
-                                  ..onTap = (){},
+                                  ..onTap = (){
+                                  Navigator.pushNamed(context, '/signup');
+                                  },
                               )
                             ]
                         ))
