@@ -12,10 +12,9 @@ class SignInScreen extends StatefulWidget {
 class _SignInScreenState extends State<SignInScreen> {
   // TODO 1:. Deklarasikan variabel
   final TextEditingController _usernameController = TextEditingController();
-
   final TextEditingController _passwordCintroller = TextEditingController();
   late String _errorText ='';
-  final bool _isSignnedIn = false;
+  late bool _isSignnedIn = false;
   bool _obscurePassword = true;
 
   void _signIn()async{
@@ -25,13 +24,34 @@ class _SignInScreenState extends State<SignInScreen> {
     final String enteredUsername = _usernameController.text.trim();
     final String enteredPassword = _passwordCintroller.text.trim();
 
-    if (enteredUsername.isEmpty || enteredPassword.isEmpty) {
+    if (enteredUsername == savedUsername && enteredPassword == savedPassword){
       setState(() {
-        _errorText = 'Nama pengguna dan kata sandi harus diisi.';
+        _errorText = "";
+        _isSignnedIn = true;
+        prefs.setBool('isSignnedIn', true);
       });
-      return;
+      //   pemanggilan untuk menghapus semua halaman dalam tumpulkan navigasi
+      WidgetsBinding.instance.addPostFrameCallback((_){
+        Navigator.of(context).popUntil((route)=>route.isFirst);
+      });
+      //   sign in berhasil, navigasi ke layar utama
+      WidgetsBinding.instance.addPostFrameCallback((_){
+        Navigator.pushReplacementNamed(context, '/');
+      });
+
     }
-  }
+    if(savedUsername.isEmpty || savedPassword.isEmpty){
+      setState(() {
+        _errorText = 'Pengguna belum terdaftar. silakan daftar terlebih dahulu';
+      });
+    }
+
+    else {
+      setState(() {
+        _errorText = 'Nama pengguna atau kata sandi salah';
+      });
+    }
+    }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
