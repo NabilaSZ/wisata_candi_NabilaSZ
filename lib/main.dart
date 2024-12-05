@@ -35,13 +35,6 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      // home: ProfileScreen(),
-      // home: DetailScreen(candi: candiList[0]),
-      // home: SignInScreen(),
-      //  home: SignUpScreen(),
-      //  home: SearchScreen(),
-       // home: HomeScreen(),
-      home: MainScreen(),
 
       initialRoute: '/',
       routes: {
@@ -52,6 +45,14 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+      // home: ProfileScreen(),
+      // home: DetailScreen(candi: candiList[0]),
+      // home: SignInScreen(),
+      //  home: SignUpScreen(),
+      //  home: SearchScreen(),
+       // home: HomeScreen(),
+      // home: MainScreen(),
+
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
 
